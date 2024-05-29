@@ -158,7 +158,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &815750776
 CapsuleCollider:
@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815750774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.09}
+  m_LocalPosition: {x: 0, y: 1, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2017286700}
@@ -342,8 +342,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373029574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6052, y: -1.94, z: 2.0204}
-  m_LocalScale: {x: 1.321, y: 1, z: 1.4041}
+  m_LocalPosition: {x: -3.8291, y: -1.94, z: -17.5}
+  m_LocalScale: {x: 2.4080143, y: 1, z: 2.9083996}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -452,7 +452,6 @@ GameObject:
   - component: {fileID: 2017286700}
   - component: {fileID: 2017286699}
   - component: {fileID: 2017286698}
-  - component: {fileID: 2017286701}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -525,20 +524,3 @@ Transform:
   m_Father: {fileID: 815750779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2017286701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017286697}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e6bd8606cec8df4ea9ff551db4303d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  mouseSensitivity: 0
-  xRot: 0
-  minY: -90
-  maxY: 90
