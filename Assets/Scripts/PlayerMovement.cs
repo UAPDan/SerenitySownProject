@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public Vector3 moveDirection;
     public float speed = 4.0f;
+    public int plants; // How many plants the player has
+    public bool touchingPlant;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +23,24 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = new Vector3(x, 0, z);
         transform.Translate(moveDirection * Time.deltaTime * speed);
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            plants += 1;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Plant")
+        {
+            touchingPlant = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Plant")
+        {
+            touchingPlant = false;
+        }
     }
 }
