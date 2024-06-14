@@ -34,10 +34,10 @@ public class Dialogue : MonoBehaviour
             plant = Planting();
             StartCoroutine(plant);
         }
-        //if (playerInRange == true)
+        /*if (playerInRange == true)
         {
             
-            /*if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (gameObject.tag == "Animal")
                 {
@@ -47,9 +47,9 @@ public class Dialogue : MonoBehaviour
 
                     }
                 }
-            }*/
+            }
 
-        }
+        }*/
     }
 
     void OnCollisionEnter(Collision collision)
@@ -59,7 +59,7 @@ public class Dialogue : MonoBehaviour
 
             // This is where you make your text object appear on screen
             yourText.enabled = true; // May need to use .SetActive(true);
-            //playerInRange = true;
+            playerInRange = true;
 
         }
 
