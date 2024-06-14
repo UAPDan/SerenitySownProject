@@ -112,3 +112,4 @@ MonoBehaviour:
   bar: {fileID: 0}
   timer: 0
   timerMax: 2
+  cube: {fileID: 4767930645849580327}

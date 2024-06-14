@@ -18,11 +18,12 @@ public class Harvesting : MonoBehaviour
     {
         bar.gameObject.SetActive(false);
         collecting.text = "";
+        cube = GameObject.FindGameObjectWithTag("Plant");
 
     }
 
     // Update is called once per frame
-        private void Update()
+    private void Update()
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
@@ -32,22 +33,11 @@ public class Harvesting : MonoBehaviour
                 StartCoroutine(collect);
             }
         }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-
-            // This is where you make your text object appear on screen
-            collecting.enabled = true; // May need to use .SetActive(true);
-
-        }
-
-    }
     public IEnumerator Collecting()
     {
         yield return new WaitForSeconds(timerMax);
-
-        DestroyImmediate(cube,true);
+        //Destroy(cube);
+        DestroyImmediate(cube, true);
     }
 
 

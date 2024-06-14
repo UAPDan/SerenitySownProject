@@ -9,35 +9,35 @@ public class Dialogue : MonoBehaviour
     public TMP_Text yourText; // Insert your text object inside unity inspector
     public Slider bar;
     public TMP_Text info;
-    public GameObject Cube; // This cube has the tag of plant
+    public GameObject Flower; // This cube has the tag of plant
     public IEnumerator plant;
     public float timer;
-    public float timerMax = 2f;
-    bool spawning;
-    float plantAtTime;
+    public float timerMax = 4f;
     public bool playerInRange;
     public GameObject playerObject;
+    public GameManager gameManager;
 
     void Start()
     {
         yourText.enabled = false; // You may need to use .SetActive(false);
         bar.gameObject.SetActive(false);
         playerObject = GameObject.Find("Player");
-        
+
     }
 
     private void Update()
     {
-        if (playerInRange == true)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                info.text = "Planting";
-                bar.gameObject.SetActive(true);
-                plant = Planting();
-                StartCoroutine(plant);
-            }
-            if (Input.GetKeyDown(KeyCode.F))
+            info.text = "Planting";
+            bar.gameObject.SetActive(true);
+            plant = Planting();
+            StartCoroutine(plant);
+        }
+        //if (playerInRange == true)
+        {
+            
+            /*if (Input.GetKeyDown(KeyCode.F))
             {
                 if (gameObject.tag == "Animal")
                 {
@@ -47,10 +47,11 @@ public class Dialogue : MonoBehaviour
 
                     }
                 }
-            }
+            }*/
+
         }
-        
     }
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -58,7 +59,7 @@ public class Dialogue : MonoBehaviour
 
             // This is where you make your text object appear on screen
             yourText.enabled = true; // May need to use .SetActive(true);
-            playerInRange = true;
+            //playerInRange = true;
 
         }
 
@@ -77,7 +78,7 @@ public class Dialogue : MonoBehaviour
     public IEnumerator Planting()
     {
         yield return new WaitForSeconds(timerMax);
-        Instantiate(Cube);
+        Instantiate(Flower);
         info.text = "";
         bar.gameObject.SetActive(false);
 
