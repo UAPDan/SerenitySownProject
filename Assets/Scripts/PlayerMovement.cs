@@ -43,4 +43,17 @@ public class PlayerMovement : MonoBehaviour
             touchingPlant = false;
         }
     }
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Animal")
+        {
+            if (plants > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    plants -= 1;
+                }
+            }
+        }
+    }*/
 }
