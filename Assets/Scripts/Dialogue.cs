@@ -22,14 +22,14 @@ public class Dialogue : MonoBehaviour
         yourText.enabled = false; // You may need to use .SetActive(false);
         bar.gameObject.SetActive(false);
         playerObject = GameObject.Find("Player");
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            info.text = "Planting";
+            gameManager.gameText.text = "Planting";
             bar.gameObject.SetActive(true);
             plant = Planting();
             StartCoroutine(plant);
@@ -58,7 +58,7 @@ public class Dialogue : MonoBehaviour
         {
 
             // This is where you make your text object appear on screen
-            yourText.enabled = true; // May need to use .SetActive(true);
+            gameManager.gameText.text = ("Press P to Plant");
             playerInRange = true;
 
         }
@@ -70,7 +70,7 @@ public class Dialogue : MonoBehaviour
         // Here is where you make the text disappear off screen
         if (collision.gameObject.tag == "Player")
         {
-            yourText.enabled = false; // May need to use .SetActive(false);
+            //yourText.enabled = false; // May need to use .SetActive(false);
             playerInRange = false;
         }
     }

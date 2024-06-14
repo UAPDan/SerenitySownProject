@@ -29,7 +29,7 @@ public class HrvestingTRY : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            info.text = "Collecting";
+           gameManager.gameText.text = "Collecting";
             bar.gameObject.SetActive(true);
             collect = Collecting();
             StartCoroutine(collect);
